@@ -1,0 +1,7 @@
+nev: Éjfél Kisváza Szett
+kategoria: vaza
+tag: 3 db kis váza
+leiras: Három karcsú kisváza mély szürke mázzal, szatén felülettel. Szettben kapható — mindegyik kicsit más magasságú.
+ar: 10 500 Ft
+megjegyzes: 3 db-os szett
+jelveny: egyedi

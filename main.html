@@ -1,110 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Handmade Pottery — Budapest</title>
+  <title>Kézzel készített kerámia — Budapest</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
-    :root{
-      --terra:#B8541E;--clay:#D4804A;--sand:#F2DCC4;--warm:#FDF5EC;
-      --earth:#2E1B10;--bark:#6B3D20;--moss:#8A8A5C;--cream:#FAF0E2;
-    }
+    :root{--terra:#B8541E;--clay:#D4804A;--sand:#F2DCC4;--warm:#FDF5EC;--earth:#2E1B10;--bark:#6B3D20;--moss:#8A8A5C;--cream:#FAF0E2}
     html{scroll-behavior:smooth}
     body{background:var(--warm);font-family:'Jost',sans-serif;color:var(--earth)}
-
-    /* ── NAV ── */
-    nav{
-      position:sticky;top:0;z-index:100;
-      background:var(--earth);padding:1rem 2.5rem;
-      display:flex;align-items:center;justify-content:space-between;
-    }
+    nav{position:sticky;top:0;z-index:100;background:var(--earth);padding:1rem 2.5rem;display:flex;align-items:center;justify-content:space-between}
     .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic;color:var(--sand);text-decoration:none}
     .nav-links{display:flex;gap:2rem}
     .nav-links a{color:#C9A882;text-decoration:none;font-size:10px;letter-spacing:.22em;text-transform:uppercase;transition:color .15s}
     .nav-links a:hover{color:var(--clay)}
-
-    /* ── HERO ── */
-    .hero{
-      background:var(--earth);color:var(--sand);
-      padding:5rem 2rem 6rem;text-align:center;position:relative;overflow:hidden;
-    }
-    .hero::before{
-      content:'';position:absolute;inset:0;
-      background:radial-gradient(ellipse 80% 55% at 50% 115%,#6B3D20 0%,transparent 68%);
-    }
+    .hero{background:var(--earth);color:var(--sand);padding:5rem 2rem 6rem;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 55% at 50% 115%,#6B3D20 0%,transparent 68%)}
     .hero-eyebrow{position:relative;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--clay);margin-bottom:1.2rem}
-    .hero h1{
-      font-family:'Cormorant Garamond',serif;
-      font-size:clamp(3.2rem,9vw,6rem);
-      font-weight:500;line-height:.95;position:relative;margin-bottom:.7rem;
-    }
+    .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,9vw,6rem);font-weight:500;line-height:.95;position:relative;margin-bottom:.7rem}
     .hero h1 em{color:var(--clay);font-style:italic}
-    .hero-sub{position:relative;font-size:14px;font-weight:300;letter-spacing:.08em;color:#C9A882;margin-bottom:2.8rem}
-    .btn{
-      display:inline-block;background:var(--terra);color:var(--sand);
-      padding:.85rem 2.4rem;font-size:11px;font-weight:500;letter-spacing:.2em;
-      text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;
-      transition:background .2s,transform .15s;font-family:'Jost',sans-serif;
-    }
+    .hero-sub{position:relative;font-size:14px;font-weight:300;letter-spacing:.06em;color:#C9A882;margin-bottom:2.8rem}
+    .btn{display:inline-block;background:var(--terra);color:var(--sand);padding:.85rem 2.4rem;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;transition:background .2s,transform .15s;font-family:'Jost',sans-serif}
     .btn:hover{background:var(--clay);transform:translateY(-2px)}
-    .btn-outline{
-      background:transparent;color:var(--sand);border:1px solid #C9A882;margin-left:1rem;
-    }
-    .btn-outline:hover{background:rgba(255,255,255,.08);transform:translateY(-2px)}
-
-    /* ── SECTION HEADERS ── */
+    .btn-outline{background:transparent;color:var(--sand);border:1px solid #C9A882;margin-left:1rem}
+    .btn-outline:hover{background:rgba(255,255,255,.08)}
     .s-label{font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--moss);margin-bottom:.6rem}
     .s-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:500;line-height:1.1;color:var(--earth);margin-bottom:2rem}
-
-    /* ── ABOUT ── */
     .about-wrap{max-width:960px;margin:0 auto;display:flex;gap:4rem;align-items:center;padding:4.5rem 2rem}
-    .about-photo{
-      width:220px;min-width:220px;height:290px;background:var(--sand);
-      overflow:hidden;flex-shrink:0;position:relative;
-    }
+    .about-photo{width:220px;min-width:220px;height:290px;background:var(--sand);overflow:hidden;flex-shrink:0}
     .about-photo img{width:100%;height:100%;object-fit:cover}
-    .about-photo-placeholder{
-      width:100%;height:100%;display:flex;align-items:center;justify-content:center;
-    }
-    .about-photo-placeholder svg{opacity:.25;width:72px;height:72px}
+    .about-photo-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+    .about-photo-ph svg{opacity:.25;width:72px;height:72px}
     .about-text p{font-size:15px;line-height:1.9;color:#5A3A25;font-weight:300;margin-bottom:1rem}
     .about-sig{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic;color:var(--terra);margin-top:.3rem}
-
-    /* ── SHOP / FILTERS ── */
     .shop-wrap{max-width:1280px;margin:0 auto;padding:0 2rem 4rem}
     .shop-header{padding:4rem 0 2rem;text-align:center}
     .filter-row{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:2.5rem}
-    .filter-btn{
-      padding:.38rem 1.1rem;border:1px solid #C9A882;background:transparent;
-      font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
-      cursor:pointer;color:var(--bark);transition:all .15s;
-    }
+    .filter-btn{padding:.38rem 1.1rem;border:1px solid #C9A882;background:transparent;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;color:var(--bark);transition:all .15s}
     .filter-btn.active,.filter-btn:hover{background:var(--terra);color:var(--sand);border-color:var(--terra)}
-
-    /* ── PRODUCT GRID ── */
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.5rem}
+    .loading-msg{grid-column:1/-1;text-align:center;padding:3rem;color:var(--moss);font-size:13px;letter-spacing:.1em}
     .card{background:var(--cream);border:1px solid #DEC9A8;overflow:hidden;transition:transform .2s}
     .card:hover{transform:translateY(-4px)}
-
-    /* Carousel */
     .carousel{position:relative;aspect-ratio:1;overflow:hidden;background:var(--sand)}
     .slides{display:flex;transition:transform .32s ease}
-    .slide{min-width:100%;aspect-ratio:1;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-    .arr{
-      position:absolute;top:50%;transform:translateY(-50%);
-      background:rgba(253,245,236,.9);border:none;cursor:pointer;
-      width:30px;height:30px;font-size:18px;color:var(--earth);
-      display:flex;align-items:center;justify-content:center;
-    }
+    .slide{min-width:100%;aspect-ratio:1;background-size:cover;background-position:center;flex-shrink:0}
+    .slide-ph{min-width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .arr{position:absolute;top:50%;transform:translateY(-50%);background:rgba(253,245,236,.92);border:none;cursor:pointer;width:32px;height:32px;font-size:20px;color:var(--earth);display:flex;align-items:center;justify-content:center;transition:background .15s}
+    .arr:hover{background:rgba(253,245,236,1)}
     .arr-l{left:7px}.arr-r{right:7px}
     .dots{position:absolute;bottom:9px;left:0;right:0;display:flex;justify-content:center;gap:5px}
     .dot{width:5px;height:5px;border-radius:50%;background:rgba(46,27,16,.25);cursor:pointer;transition:background .15s}
     .dot.active{background:var(--terra)}
-
-    /* Card body */
     .card-body{padding:1rem 1.15rem}
     .card-tag{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--moss);margin-bottom:.25rem}
     .card-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--earth);margin-bottom:.35rem}
@@ -112,34 +61,21 @@
     .card-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #DEC9A8;padding-top:.75rem}
     .card-price{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--terra);font-weight:500}
     .card-price small{display:block;font-family:'Jost',sans-serif;font-size:.68rem;color:var(--moss);font-weight:300;margin-top:-1px}
-    .btn-card{
-      background:var(--terra);color:var(--sand);border:none;
-      padding:.4rem 1rem;font-family:'Jost',sans-serif;font-size:10px;
-      letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:background .15s;
-    }
+    .btn-card{background:var(--terra);color:var(--sand);border:none;padding:.4rem 1rem;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:background .15s}
     .btn-card:hover{background:var(--clay)}
     .badge{display:inline-block;font-size:9px;letter-spacing:.15em;text-transform:uppercase;padding:.18rem .55rem;margin-bottom:.4rem}
-    .badge-new{background:#E8F3D8;color:#3B6D11}
-    .badge-custom{background:#FAF0E2;color:#854F0B;border:1px solid #DEC9A8}
-
-    /* ── PRICING TABLE ── */
-    .pricing-section{background:var(--earth);padding:4.5rem 2rem;color:var(--sand)}
-    .pricing-section .s-title{color:var(--sand)}
-    .pricing-section .s-label{color:var(--clay)}
-    .pricing-grid{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-      gap:1px;background:#4A2C18;max-width:1000px;margin:0 auto;
-    }
+    .badge-uj{background:#E8F3D8;color:#3B6D11}
+    .badge-egyedi{background:#FAF0E2;color:#854F0B;border:1px solid #DEC9A8}
+    .pricing-section{background:var(--earth);padding:4.5rem 2rem}
+    .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:#4A2C18;max-width:1000px;margin:0 auto}
     .price-card{background:#3D2410;padding:2rem 1.5rem;transition:background .2s}
     .price-card:hover{background:#4A2C18}
     .price-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:#E8C9A8;margin-bottom:.25rem}
-    .price-desc{font-size:11px;color:#9A7A5A;letter-spacing:.04em;margin-bottom:1rem;font-weight:300}
+    .price-desc{font-size:11px;color:#9A7A5A;margin-bottom:1rem;font-weight:300}
     .price-amt{font-size:1.55rem;font-weight:500;color:var(--clay)}
     .price-amt span{font-size:12px;color:#9A7A5A;font-weight:300}
-    .price-note{font-size:10px;color:#6A5040;margin-top:.25rem;letter-spacing:.05em}
-
-    /* ── ORDER FORM ── */
-    #order{background:var(--sand);padding:5rem 2rem}
+    .price-note{font-size:10px;color:#6A5040;margin-top:.25rem}
+    #rendeles{background:var(--sand);padding:5rem 2rem}
     .order-inner{max-width:640px;margin:0 auto}
     .order-inner .s-title{text-align:center}
     .order-inner .s-label{display:block;text-align:center}
@@ -147,506 +83,296 @@
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
     .form-group{display:flex;flex-direction:column;margin-bottom:1rem}
     .form-group label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);margin-bottom:.4rem}
-    .form-group input,
-    .form-group select,
-    .form-group textarea{
-      padding:.72rem 1.1rem;border:1px solid #C9A882;background:var(--warm);
-      font-family:'Jost',sans-serif;font-size:13px;color:var(--earth);
-      outline:none;resize:vertical;
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus{border-color:var(--terra)}
+    .form-group input,.form-group select,.form-group textarea{padding:.72rem 1.1rem;border:1px solid #C9A882;background:var(--warm);font-family:'Jost',sans-serif;font-size:13px;color:var(--earth);outline:none;resize:vertical}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--terra)}
     .form-group select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M0 0l6 8 6-8' fill='none' stroke='%238A8A5C' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
     .form-submit{text-align:center;margin-top:1.5rem}
-    .btn-submit{
-      background:var(--terra);color:var(--sand);border:none;
-      padding:1rem 3rem;font-family:'Jost',sans-serif;font-size:11px;
-      font-weight:500;letter-spacing:.22em;text-transform:uppercase;
-      cursor:pointer;transition:background .2s,transform .15s;width:100%;
-    }
+    .btn-submit{background:var(--terra);color:var(--sand);border:none;padding:1rem 3rem;font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:background .2s,transform .15s;width:100%}
     .btn-submit:hover{background:var(--clay);transform:translateY(-1px)}
     .form-note{font-size:11px;color:var(--moss);text-align:center;margin-top:.8rem}
-
-    /* Success / error messages */
-    .msg{
-      display:none;padding:1rem 1.5rem;margin-bottom:1.5rem;font-size:13px;text-align:center;
-    }
+    .msg{display:none;padding:1rem 1.5rem;margin-bottom:1.5rem;font-size:13px;text-align:center}
     .msg-success{background:#E8F3D8;color:#2A5A10;border:1px solid #C0DD97}
     .msg-error{background:#FCEBEB;color:#791F1F;border:1px solid #F09595}
-
-    /* ── CONTACT STRIP ── */
-    .contact-strip{
-      background:var(--earth);padding:2.5rem 2rem;
-      display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;
-    }
-    .ci strong{display:block;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);margin-bottom:.3rem}
+    .contact-strip{background:var(--earth);padding:2.5rem 2rem;display:flex;gap:2rem;justify-content:center;flex-wrap:wrap}
     .ci{font-size:12px;color:#C9A882}
-
+    .ci strong{display:block;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);margin-bottom:.3rem}
     footer{background:#1E0E05;color:#6A5040;text-align:center;padding:1.5rem;font-size:11px;letter-spacing:.1em}
     footer em{color:var(--clay)}
-
-    @media(max-width:680px){
-      .about-wrap{flex-direction:column}
-      .about-photo{width:100%;min-width:unset;height:220px}
-      .form-row{grid-template-columns:1fr}
-      .nav-links{gap:1.2rem}
-      .btn-outline{display:none}
-    }
-    @media(max-width:480px){
-      .grid{grid-template-columns:repeat(2,1fr)}
-      .card-desc{display:none}
-    }
+    @media(max-width:680px){.about-wrap{flex-direction:column}.about-photo{width:100%;min-width:unset;height:220px}.form-row{grid-template-columns:1fr}.btn-outline{display:none}}
+    @media(max-width:480px){.grid{grid-template-columns:repeat(2,1fr)}.card-desc{display:none}}
   </style>
 </head>
 <body>
 
-<!-- ════════════ NAV ════════════ -->
 <nav>
-  <a href="#" class="nav-logo">Your Pottery Studio</a>
+  <a href="#" class="nav-logo">A Te Kerámiád</a>
   <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#shop">Shop</a>
-    <a href="#order">Order</a>
+    <a href="#rolam">Rólam</a>
+    <a href="#kollekcio">Kollekció</a>
+    <a href="#rendeles">Rendelés</a>
   </div>
 </nav>
 
-<!-- ════════════ HERO ════════════ -->
 <section class="hero">
-  <p class="hero-eyebrow">Handmade Ceramics · Budapest</p>
-  <h1>Made by<br><em>hand,</em><br>fired with love</h1>
-  <p class="hero-sub">Each piece is unique — wheel-thrown & glazed by hand</p>
-  <a href="#shop" class="btn">View Collection</a>
-  <a href="#order" class="btn btn-outline">Place an Order</a>
+  <p class="hero-eyebrow">Kézzel készített kerámia · Budapest</p>
+  <h1>Kézzel<br><em>formálva,</em><br>szeretettel égetve</h1>
+  <p class="hero-sub">Minden darab egyedi — korongon készítve, kézzel mázolva</p>
+  <a href="#kollekcio" class="btn">Kollekció megtekintése</a>
+  <a href="#rendeles" class="btn btn-outline">Rendelés leadása</a>
 </section>
 
-<!-- ════════════ ABOUT ════════════ -->
-<section id="about" style="background:var(--warm)">
+<section id="rolam" style="background:var(--warm)">
   <div class="about-wrap">
-
-    <!-- PHOTO: replace the div below with <img src="img/your-photo.jpg" alt="Artist"> inside .about-photo -->
     <div class="about-photo">
-      <div class="about-photo-placeholder">
+      <div class="about-photo-ph">
         <svg viewBox="0 0 64 64" fill="none" stroke="#7A4020" stroke-width="1.5">
           <circle cx="32" cy="22" r="10"/>
           <path d="M14 54 Q14 38 32 38 Q50 38 50 54"/>
         </svg>
       </div>
     </div>
-
     <div>
-      <p class="s-label">The Artist</p>
-      <h2 class="s-title">About Me</h2>
+      <p class="s-label">Az alkotó</p>
+      <h2 class="s-title">Rólam</h2>
       <div class="about-text">
-        <!-- EDIT: replace with your own story -->
-        <p>Hello! I'm a passionate ceramicist based in Budapest, Hungary. I've been working with clay for over eight years, finding beauty in the organic imperfections that make every piece truly one-of-a-kind.</p>
-        <p>My work is inspired by nature — the earthy textures of forest floors, the smooth curves of river stones. Every bowl, vase, and mug passes through my hands dozens of times before it's ready to find its home.</p>
-        <p>I work from my small studio, where everything is wheel-thrown, hand-glazed, and kiln-fired.</p>
-        <p class="about-sig">— Your Name Here</p>
+        <p>Szia! Szenvedélyes keramikus vagyok csalgótarjánbó blablabalabla.</p>
+        <p>Munkáimat a természet ihleti — az erdei talaj földes textúrái, a folyókövek sima görbületei. Minden tál, váza és bögre rengeteg gonddal készül, mielőtt megtalálja az otthonát.</p>
+        <p>Kis műhelyemből dolgozom, ahol minden darabot korongon formálok, kézzel mázolok, és kemencében égetek.</p>
+        <p class="about-sig">Ági</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════════════ SHOP ════════════ -->
-<section id="shop" style="background:var(--cream)">
+<section id="kollekcio" style="background:var(--cream)">
   <div class="shop-wrap">
     <div class="shop-header">
-      <p class="s-label">Browse</p>
-      <h2 class="s-title">The Collection</h2>
+      <p class="s-label">Böngészés</p>
+      <h2 class="s-title">A Kollekció</h2>
     </div>
     <div class="filter-row">
-      <button class="filter-btn active" onclick="filter('all',this)">All</button>
-      <button class="filter-btn" onclick="filter('vase',this)">Vases</button>
-      <button class="filter-btn" onclick="filter('mug',this)">Mugs</button>
-      <button class="filter-btn" onclick="filter('bowl',this)">Bowls</button>
-      <button class="filter-btn" onclick="filter('planter',this)">Planters</button>
-      <button class="filter-btn" onclick="filter('jug',this)">Jugs</button>
+      <button class="filter-btn active" onclick="filterCat('mind',this)">Összes</button>
+      <button class="filter-btn" onclick="filterCat('vaza',this)">Vázák</button>
+      <button class="filter-btn" onclick="filterCat('bogre',this)">Bögrék</button>
+      <button class="filter-btn" onclick="filterCat('tal',this)">Tálak</button>
+      <button class="filter-btn" onclick="filterCat('viragcserep',this)">Virágcserepek</button>
+      <button class="filter-btn" onclick="filterCat('korso',this)">Korsók</button>
     </div>
-    <div class="grid" id="grid"></div>
+    <div id="grid" class="grid">
+      <p class="loading-msg">Termékek betöltése…</p>
+    </div>
   </div>
 </section>
 
-<!-- ════════════ PRICING ════════════ -->
 <section class="pricing-section">
   <div style="text-align:center;margin-bottom:2rem">
-    <p class="s-label" style="color:var(--clay)">Pricing</p>
-    <h2 class="s-title" style="color:var(--sand)">The Pieces</h2>
+    <p class="s-label" style="color:var(--clay)">Árak</p>
+    <h2 class="s-title" style="color:var(--sand)">A Darabok</h2>
   </div>
   <div class="pricing-grid">
-    <div class="price-card">
-      <div class="price-name">Mugs &amp; Cups</div>
-      <div class="price-desc">Wheel-thrown, food safe</div>
-      <div class="price-amt">€28 <span>/ piece</span></div>
-      <div class="price-note">Custom colours available</div>
-    </div>
-    <div class="price-card">
-      <div class="price-name">Bowls</div>
-      <div class="price-desc">Small to large</div>
-      <div class="price-amt">€35–60 <span>/ piece</span></div>
-      <div class="price-note">Sets of 4 with 10% off</div>
-    </div>
-    <div class="price-card">
-      <div class="price-name">Vases</div>
-      <div class="price-desc">Statement pieces</div>
-      <div class="price-amt">€55–120 <span>/ piece</span></div>
-      <div class="price-note">Larger sizes on request</div>
-    </div>
-    <div class="price-card">
-      <div class="price-name">Planters</div>
-      <div class="price-desc">With drainage + saucer</div>
-      <div class="price-amt">€40–80 <span>/ piece</span></div>
-      <div class="price-note">Saucer included</div>
-    </div>
-    <div class="price-card">
-      <div class="price-name">Custom Order</div>
-      <div class="price-desc">Your idea, my hands</div>
-      <div class="price-amt">From €45</div>
-      <div class="price-note">4–6 weeks lead time</div>
-    </div>
+    <div class="price-card"><div class="price-name">Bögrék &amp; csészék</div><div class="price-desc">Korongolt, élelmiszer-biztos máz</div><div class="price-amt">4 500 Ft <span>/ db</span></div><div class="price-note">Egyedi színek elérhetők</div></div>
+    <div class="price-card"><div class="price-name">Tálak</div><div class="price-desc">Kis és nagy méretben</div><div class="price-amt">5 500–9 500 Ft <span>/ db</span></div><div class="price-note">4 db-os szett: 10% kedvezmény</div></div>
+    <div class="price-card"><div class="price-name">Vázák</div><div class="price-desc">Látványos díszdarabok</div><div class="price-amt">8 500–19 000 Ft <span>/ db</span></div><div class="price-note">Nagyobb méret igény szerint</div></div>
+    <div class="price-card"><div class="price-name">Virágcserepek</div><div class="price-desc">Vízelvezetővel és csészével</div><div class="price-amt">6 500–13 000 Ft <span>/ db</span></div><div class="price-note">Alátét mellékelve</div></div>
+    <div class="price-card"><div class="price-name">Egyedi rendelés</div><div class="price-desc">A te ötleted, az én kezeim</div><div class="price-amt">7 500 Ft-tól</div><div class="price-note">4–6 hét átfutási idő</div></div>
   </div>
 </section>
 
-<!-- ════════════ ORDER FORM ════════════ -->
-<section id="order">
+<section id="rendeles">
   <div class="order-inner">
-    <p class="s-label">Get In Touch</p>
-    <h2 class="s-title">Place an Order</h2>
-    <p class="order-lead">
-      Found something you love, or have a custom piece in mind?<br>
-      Fill in the form — I'll reply within 24 hours.
-    </p>
-
-    <div class="msg msg-success" id="msg-success">
-      Thank you! Your message was sent. I'll be in touch within 24 hours.
-    </div>
-    <div class="msg msg-error" id="msg-error">
-      Something went wrong. Please try emailing me directly at hello@yourpottery.com
-    </div>
-
-    <!--
-      ══════════════════════════════════════════════════════════
-      HOW TO MAKE THIS FORM SEND REAL EMAILS (free, 2 minutes):
-      1. Go to https://formspree.io and create a free account
-      2. Click "New Form", give it a name, enter your email
-      3. Copy the form endpoint — it looks like:
-            https://formspree.io/f/xyzabc12
-      4. Replace the action URL below with your endpoint
-      ══════════════════════════════════════════════════════════
-    -->
+    <p class="s-label">Lépj kapcsolatba</p>
+    <h2 class="s-title">Rendelés leadása</h2>
+    <p class="order-lead">Megtetszett egy darab, vagy egyedi terméket szeretnél?<br>Töltsd ki az űrlapot — 24 órán belül válaszolok.</p>
+    <div class="msg msg-success" id="msg-success">Köszönöm! Az üzeneted megérkezett. 24 órán belül felveszem veled a kapcsolatot.</div>
+    <div class="msg msg-error" id="msg-error">Valami hiba történt. Kérlek írj közvetlenül: <strong>hello@keramiamuhely.hu</strong></div>
     <form id="order-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-
       <div class="form-row">
-        <div class="form-group">
-          <label for="fname">Your Name *</label>
-          <input type="text" id="fname" name="name" required placeholder="Anna Kovács"/>
-        </div>
-        <div class="form-group">
-          <label for="femail">Your Email *</label>
-          <input type="email" id="femail" name="email" required placeholder="anna@email.com"/>
-        </div>
+        <div class="form-group"><label for="fname">Neved *</label><input type="text" id="fname" name="name" required placeholder="Kovács Anna"/></div>
+        <div class="form-group"><label for="femail">E-mail *</label><input type="email" id="femail" name="email" required placeholder="anna@email.hu"/></div>
       </div>
-
       <div class="form-row">
-        <div class="form-group">
-          <label for="fphone">Phone (optional)</label>
-          <input type="tel" id="fphone" name="phone" placeholder="+36 30 123 4567"/>
-        </div>
-        <div class="form-group">
-          <label for="fcountry">Country</label>
-          <input type="text" id="fcountry" name="country" placeholder="Hungary"/>
-        </div>
+        <div class="form-group"><label for="fphone">Telefon (opcionális)</label><input type="tel" id="fphone" name="phone" placeholder="+36 30 123 4567"/></div>
+        <div class="form-group"><label for="fcity">Város</label><input type="text" id="fcity" name="city" placeholder="Budapest"/></div>
       </div>
-
       <div class="form-group">
-        <label for="fitem">Interested In *</label>
+        <label for="fitem">Érdeklődés tárgya *</label>
         <select id="fitem" name="item" required>
-          <option value="">— Select a category —</option>
-          <option>Mug / Cup</option>
-          <option>Bowl</option>
-          <option>Vase</option>
-          <option>Planter</option>
-          <option>Jug</option>
-          <option>Custom order</option>
-          <option>Multiple pieces</option>
+          <option value="">— Válassz kategóriát —</option>
+          <option>Bögre / Csésze</option><option>Tál</option><option>Váza</option>
+          <option>Virágcserép</option><option>Korsó</option><option>Egyedi rendelés</option><option>Több darab</option>
         </select>
       </div>
-
-      <div class="form-group">
-        <label for="fproduct">Specific Piece (optional)</label>
-        <input type="text" id="fproduct" name="specific_piece" placeholder="e.g. Harvest Moon Vase, Speckled Cream Mug…"/>
-      </div>
-
-      <div class="form-group">
-        <label for="fmsg">Your Message *</label>
-        <textarea id="fmsg" name="message" rows="5" required placeholder="Tell me what you're looking for — glaze colour preferences, quantity, any custom wishes, or just say hello!"></textarea>
-      </div>
-
-      <!-- hidden spam trap — do not remove -->
+      <div class="form-group"><label for="fproduct">Konkrét termék (opcionális)</label><input type="text" id="fproduct" name="specific_piece" placeholder="pl. Aratóhold Váza…"/></div>
+      <div class="form-group"><label for="fmsg">Üzeneted *</label><textarea id="fmsg" name="message" rows="5" required placeholder="Írd le, mit keresel — máz szín, darabszám, egyedi kérés, vagy csak köszönj!"></textarea></div>
       <input type="text" name="_gotcha" style="display:none"/>
-
       <div class="form-submit">
-        <button type="submit" class="btn-submit" id="submit-btn">Send Message</button>
-        <p class="form-note">I reply within 24 hours · All orders are made to order</p>
+        <button type="submit" class="btn-submit" id="submit-btn">Üzenet küldése</button>
+        <p class="form-note">24 órán belül válaszolok · Minden darab rendelésre készül</p>
       </div>
     </form>
   </div>
 </section>
 
-<!-- ════════════ CONTACT STRIP ════════════ -->
 <div class="contact-strip">
-  <!-- EDIT: replace with your real details -->
-  <div class="ci"><strong>Studio</strong>Budapest, Hungary</div>
-  <div class="ci"><strong>Email</strong>hello@yourpottery.com</div>
-  <div class="ci"><strong>Instagram</strong>@yourpotteryshop</div>
-  <div class="ci"><strong>Shipping</strong>Worldwide</div>
-  <div class="ci"><strong>Lead time</strong>2–4 weeks</div>
+  <div class="ci"><strong>Műhely</strong>Budapest, Magyarország</div>
+  <div class="ci"><strong>E-mail</strong>hello@keramiamuhely.hu</div>
+  <div class="ci"><strong>Instagram</strong>@keramia_muhely</div>
+  <div class="ci"><strong>Szállítás</strong>Egész Magyarországra</div>
+  <div class="ci"><strong>Átfutási idő</strong>2–4 hét</div>
 </div>
 
-<footer>
-  Handcrafted with love — <em>Your Pottery Studio</em> · Budapest · 2026
-</footer>
-
-
-<!-- ════════════════════════════════════════════
-     PRODUCT DATA
-     ════════════════════════════════════════════
-
-  HOW TO ADD YOUR PHOTOS:
-  ─────────────────────────────────────────────
-  1. Create a folder called "img" next to this HTML file
-  2. Copy your photos into it, e.g.:
-       img/vase1-front.jpg
-       img/vase1-side.jpg
-       img/mug1.jpg
-
-  3. In the products list below, update the "photos" array:
-       photos: ['img/vase1-front.jpg', 'img/vase1-side.jpg', 'img/vase1-detail.jpg']
-
-  4. Each product can have 1, 2, or 3 photos.
-     If you only have one photo:  photos: ['img/mug1.jpg']
-     Arrows only show if there are 2+ photos.
-
-  HOW TO ADD A NEW PRODUCT:
-  ─────────────────────────────────────────────
-  Copy one of the blocks below and change:
-    id       — unique number
-    cat      — 'vase' | 'mug' | 'bowl' | 'planter' | 'jug'
-    badge    — '' | 'new' | 'custom'
-    name     — product name
-    tag      — short label shown under badge
-    desc     — 1–2 sentence description
-    price    — price string, e.g. '€48'
-    note     — small note below price, e.g. 'set of 3'
-    photos   — array of image paths (or leave hex color as placeholder)
-════════════════════════════════════════════ -->
+<footer>Szeretettel készítve — <em>A Te Kerámia Műhelyed</em> · Budapest · 2026</footer>
 
 <script>
-const products = [
-  {
-    id:1, cat:'vase', badge:'new',
-    name:'Harvest Moon Vase', tag:'Tall vase · 32cm',
-    desc:'Wheel-thrown stoneware with a warm amber ash glaze. Stands 32 cm tall — a perfect centrepiece.',
-    price:'€85', note:'',
-    photos:['#C4855A','#D4956A','#B8754A']
-    // TO USE REAL PHOTOS replace with: photos:['img/vase-harvest-1.jpg','img/vase-harvest-2.jpg','img/vase-harvest-3.jpg']
-  },
-  {
-    id:2, cat:'mug', badge:'',
-    name:'Morning Ritual Mug', tag:'Mug · 350ml',
-    desc:'Comfortable with a slightly flared lip. Food-safe matte glaze in forest green with a speckled finish.',
-    price:'€28', note:'per piece',
-    photos:['#8A9A6A','#7A8A5A','#9AAA7A']
-  },
-  {
-    id:3, cat:'bowl', badge:'',
-    name:'River Stone Bowl', tag:'Medium bowl · 18cm',
-    desc:'Smooth organic form inspired by river-worn stones. Matte white interior, terracotta exterior. Dishwasher safe.',
-    price:'€42', note:'',
-    photos:['#D8C8A8','#E8D8B8','#C8B898']
-  },
-  {
-    id:4, cat:'planter', badge:'new',
-    name:'Forest Floor Planter', tag:'Planter · medium',
-    desc:'Earthy textured surface with mossy green glaze. Includes drainage hole and matching saucer.',
-    price:'€55', note:'incl. saucer',
-    photos:['#6A8A5A','#7A9A6A','#5A7A4A']
-  },
-  {
-    id:5, cat:'jug', badge:'',
-    name:'Sundried Jug', tag:'Jug · 1.2L',
-    desc:'Classic pitcher form with an easy-pour spout and sturdy handle. Sandy beige glaze with golden undertones.',
-    price:'€60', note:'',
-    photos:['#D4B888','#C4A878','#E4C898']
-  },
-  {
-    id:6, cat:'vase', badge:'custom',
-    name:'Midnight Bud Vases', tag:'Set of 3 bud vases',
-    desc:'A trio of slim bud vases in deep charcoal glaze. Sold as a set — each slightly different in height.',
-    price:'€65', note:'set of 3',
-    photos:['#4A3A3A','#5A4A4A','#3A2A2A']
-  },
-  {
-    id:7, cat:'mug', badge:'',
-    name:'Speckled Cream Mug', tag:'Mug · 280ml',
-    desc:'Petite and elegant with a creamy speckled glaze and hand-pulled handle.',
-    price:'€26', note:'',
-    photos:['#E8DCC8','#F0E4D0','#DDD0BC']
-  },
-  {
-    id:8, cat:'bowl', badge:'',
-    name:'Terracotta Nesting Bowls', tag:'Bowl set · 3 sizes',
-    desc:'Three perfectly nesting bowls from small to large. Raw terracotta interior, white slip exterior. Oven safe.',
-    price:'€95', note:'set of 3',
-    photos:['#C4724A','#D4825A','#B4623A']
-  },
-  {
-    id:9, cat:'planter', badge:'',
-    name:'Cactus Tower Planter', tag:'Planter · tall',
-    desc:'Tall cylindrical planter with a rough linen-textured surface. Ideal for cacti and succulents.',
-    price:'€70', note:'',
-    photos:['#B8A88A','#C8B89A','#A8987A']
-  },
-  {
-    id:10, cat:'vase', badge:'',
-    name:'Blush Ripple Vase', tag:'Medium vase · 22cm',
-    desc:'Soft blush pink glaze with hand-tooled ripple texture around the belly. Each one unique.',
-    price:'€72', note:'',
-    photos:['#E8B8A8','#D8A898','#F0C8B8']
-  },
-  {
-    id:11, cat:'jug', badge:'custom',
-    name:'Custom Pour-Over Set', tag:'Jug + cup · made to order',
-    desc:'Matching pour-over jug and tasting cup in your chosen glaze colour. 4–5 week lead time.',
-    price:'From €90', note:'custom order',
-    photos:['#A8B8C8','#B8C8D8','#98A8B8']
-  },
-  {
-    id:12, cat:'bowl', badge:'new',
-    name:'Deep Indigo Pasta Bowl', tag:'Wide bowl · 22cm',
-    desc:'Generous wide-rimmed pasta bowl in deep indigo glaze with copper speckling. Microwave safe.',
-    price:'€48', note:'',
-    photos:['#4A5A8A','#5A6A9A','#3A4A7A']
-  },
-];
+/*
+  ═══════════════════════════════════════════════════════════
+  HOGYAN ADD HOZZÁ A KÉPEIDET — NEM KELL ÁTNEVEZNI!
 
-/* ── Carousel state ── */
-let active = {};
+  1. Tedd a képeket az img/1/, img/2/ stb. mappákba
+     (bármilyen fájlnév jó: IMG_20260328_084044.jpg is)
 
-function isImg(s){ return s.startsWith('/') || s.startsWith('http') || s.includes('.'); }
+  2. Futtasd a kepek_frissit.ps1 fájlt (jobb klikk →
+     "Futtatás PowerShell-lel") — ez létrehozza az images.json-t
 
-function renderGrid(cat='all'){
+  3. Kész! Az oldal automatikusan megtalálja az összes képet.
+
+  HA ÚJ KÉPET ADSZ HOZZÁ: mindig futtasd újra a .ps1 fájlt!
+  ═══════════════════════════════════════════════════════════
+*/
+
+let allProducts = [];
+let activeFilter = 'mind';
+const carouselState = {};
+const PH = ['#C4855A','#8A9A6A','#D8C8A8','#6A8A5A','#D4B888','#4A3A3A','#E8DCC8','#C4724A','#B8A88A','#E8B8A8','#A8B8C8','#4A5A8A'];
+
+function parseTxt(txt, id) {
+  const obj = { id };
+  txt.split('\n').forEach(line => {
+    const sep = line.indexOf(':');
+    if (sep === -1) return;
+    obj[line.slice(0, sep).trim()] = line.slice(sep + 1).trim();
+  });
+  return obj;
+}
+
+function badgeHtml(j) {
+  if (j === 'uj') return '<span class="badge badge-uj">Új</span>';
+  if (j === 'egyedi') return '<span class="badge badge-egyedi">Egyedi</span>';
+  return '';
+}
+
+function cardHtml(p) {
+  const photos = p.photos || [];
+  const id = p.id;
+  carouselState[id] = 0;
+  const n = photos.length;
+
+  const slidesHtml = n > 0
+    ? photos.map(src => `<div class="slide" style="background-image:url('${src}')"></div>`).join('')
+    : `<div class="slide-ph" style="background:${PH[(id-1)%PH.length]}">
+         <svg style="opacity:.25;width:52px;height:52px" viewBox="0 0 64 64" fill="none" stroke="#fff" stroke-width="1.2">
+           <ellipse cx="32" cy="36" rx="12" ry="14"/>
+           <path d="M20 36Q19 26 26 20Q32 14 38 20Q45 26 44 36"/>
+         </svg></div>`;
+
+  const controls = n > 1 ? `
+    <button class="arr arr-l" onclick="move(${id},-1,${n})">&#8249;</button>
+    <button class="arr arr-r" onclick="move(${id},1,${n})">&#8250;</button>
+    <div class="dots">${Array.from({length:n},(_,i)=>
+      `<div class="dot${i===0?' active':''}" id="dot-${id}-${i}" onclick="goTo(${id},${i},${n})"></div>`
+    ).join('')}</div>` : '';
+
+  const nameEsc = (p.nev||'').replace(/'/g,"\\'");
+  return `<div class="card" data-cat="${p.kategoria||''}">
+    <div class="carousel">
+      <div class="slides" id="sl-${id}">${slidesHtml}</div>${controls}
+    </div>
+    <div class="card-body">
+      ${badgeHtml(p.jelveny||'')}
+      <div class="card-tag">${p.tag||''}</div>
+      <div class="card-name">${p.nev||''}</div>
+      <div class="card-desc">${p.leiras||''}</div>
+      <div class="card-footer">
+        <div class="card-price">${p.ar||''}${p.megjegyzes?`<small>${p.megjegyzes}</small>`:''}</div>
+        <button class="btn-card" onclick="prefill('${nameEsc}')">Megrendelem</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderGrid() {
   const grid = document.getElementById('grid');
-  const items = cat==='all' ? products : products.filter(p=>p.cat===cat);
-  active = {};
-  items.forEach(p=>{ active[p.id]=0; });
-
-  grid.innerHTML = items.map(p=>`
-    <div class="card">
-      <div class="carousel">
-        <div class="slides" id="sl-${p.id}">
-          ${p.photos.map(ph=> isImg(ph)
-            ? `<div class="slide" style="background-image:url('${ph}')"></div>`
-            : `<div class="slide" style="background:${ph}">
-                 <svg style="opacity:.25;width:52px;height:52px" viewBox="0 0 64 64" fill="none" stroke="#fff" stroke-width="1.2">
-                   <ellipse cx="32" cy="36" rx="12" ry="14"/>
-                   <path d="M20 36Q19 26 26 20Q32 14 38 20Q45 26 44 36"/>
-                 </svg></div>`
-          ).join('')}
-        </div>
-        ${p.photos.length>1?`
-          <button class="arr arr-l" onclick="move(${p.id},-1,${p.photos.length})">&#8249;</button>
-          <button class="arr arr-r" onclick="move(${p.id},1,${p.photos.length})">&#8250;</button>
-          <div class="dots">${p.photos.map((_,i)=>`
-            <div class="dot${i===0?' active':''}" id="d-${p.id}-${i}" onclick="goTo(${p.id},${i},${p.photos.length})"></div>`
-          ).join('')}</div>`:''}
-      </div>
-      <div class="card-body">
-        ${p.badge==='new'?'<span class="badge badge-new">New</span>':p.badge==='custom'?'<span class="badge badge-custom">Custom</span>':''}
-        <div class="card-tag">${p.tag}</div>
-        <div class="card-name">${p.name}</div>
-        <div class="card-desc">${p.desc}</div>
-        <div class="card-footer">
-          <div class="card-price">${p.price}${p.note?`<small>${p.note}</small>`:''}</div>
-          <button class="btn-card" onclick="prefill('${p.name}')">Order</button>
-        </div>
-      </div>
-    </div>`).join('');
+  const items = activeFilter === 'mind' ? allProducts : allProducts.filter(p => p.kategoria === activeFilter);
+  grid.innerHTML = items.length ? items.map(cardHtml).join('') : '<p class="loading-msg">Nincsenek termékek ebben a kategóriában.</p>';
 }
 
-function move(id,dir,total){
-  active[id]=(active[id]+dir+total)%total;
-  goTo(id,active[id],total);
-}
-function goTo(id,idx,total){
-  active[id]=idx;
+function move(id, dir, total) { carouselState[id]=(carouselState[id]+dir+total)%total; goTo(id,carouselState[id],total); }
+function goTo(id, idx, total) {
+  carouselState[id]=idx;
   const sl=document.getElementById('sl-'+id);
   if(sl) sl.style.transform=`translateX(-${idx*100}%)`;
-  for(let i=0;i<total;i++){
-    const d=document.getElementById(`d-${id}-${i}`);
-    if(d) d.className='dot'+(i===idx?' active':'');
-  }
+  for(let i=0;i<total;i++){const d=document.getElementById(`dot-${id}-${i}`);if(d)d.className='dot'+(i===idx?' active':'');}
 }
-function filter(cat,btn){
+function filterCat(cat, btn) {
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  renderGrid(cat);
+  btn.classList.add('active'); activeFilter=cat; renderGrid();
+}
+function prefill(name) {
+  const f=document.getElementById('fproduct'); if(f) f.value=name;
+  document.getElementById('rendeles').scrollIntoView({behavior:'smooth'});
 }
 
-/* Pre-fill the order form when user clicks "Order" on a card */
-function prefill(name){
-  const field = document.getElementById('fproduct');
-  if(field){ field.value = name; }
-  document.getElementById('order').scrollIntoView({behavior:'smooth'});
+async function init() {
+  // 1. Beolvassuk az images.json-t (a kepek_frissit.ps1 hozza létre)
+  let imageMap = {};
+  try {
+    const r = await fetch('images.json');
+    if (r.ok) imageMap = await r.json();
+    else console.warn('images.json nem található — futtasd a kepek_frissit.ps1-et!');
+  } catch(e) { console.warn('images.json betöltési hiba:', e); }
+
+  // 2. Beolvassuk az 1.txt – 12.txt fájlokat
+  const promises = Array.from({length:12}, async (_,i) => {
+    const id = i + 1;
+    try {
+      const r = await fetch(`${id}.txt`);
+      if (!r.ok) return null;
+      const txt = await r.text();
+      const data = parseTxt(txt, id);
+      // Képek az images.json-ból
+      data.photos = imageMap[String(id)] || imageMap[id] || [];
+      return data;
+    } catch(e) { return null; }
+  });
+
+  allProducts = (await Promise.all(promises)).filter(Boolean);
+  renderGrid();
 }
 
-/* ── Form submission via Formspree (AJAX) ── */
+// Rendelési űrlap
 const form = document.getElementById('order-form');
 const submitBtn = document.getElementById('submit-btn');
 const successMsg = document.getElementById('msg-success');
 const errorMsg = document.getElementById('msg-error');
-
-form.addEventListener('submit', async function(e){
+form.addEventListener('submit', async function(e) {
   e.preventDefault();
-  submitBtn.disabled = true;
-  submitBtn.textContent = 'Sending…';
-  successMsg.style.display = 'none';
-  errorMsg.style.display = 'none';
-
-  const data = new FormData(form);
-
-  // If the action is still the placeholder, show a demo success message
+  submitBtn.disabled=true; submitBtn.textContent='Küldés…';
+  successMsg.style.display='none'; errorMsg.style.display='none';
   if(form.action.includes('YOUR_FORM_ID')){
     await new Promise(r=>setTimeout(r,800));
-    successMsg.style.display = 'block';
-    successMsg.textContent = '(Demo mode) Form works! Replace YOUR_FORM_ID with your Formspree endpoint to receive real emails.';
-    form.reset();
-    submitBtn.disabled = false;
-    submitBtn.textContent = 'Send Message';
-    return;
+    successMsg.style.display='block';
+    successMsg.textContent='(Demo mód) Az űrlap működik! Cseréld le a YOUR_FORM_ID részt a Formspree azonosítódra.';
+    form.reset(); submitBtn.disabled=false; submitBtn.textContent='Üzenet küldése'; return;
   }
-
   try {
-    const res = await fetch(form.action, {
-      method:'POST',
-      body: data,
-      headers:{ 'Accept':'application/json' }
-    });
-    if(res.ok){
-      successMsg.style.display = 'block';
-      form.reset();
-    } else {
-      errorMsg.style.display = 'block';
-    }
-  } catch(err){
-    errorMsg.style.display = 'block';
-  }
-
-  submitBtn.disabled = false;
-  submitBtn.textContent = 'Send Message';
+    const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+    if(res.ok){successMsg.style.display='block';form.reset();}
+    else errorMsg.style.display='block';
+  } catch(e){errorMsg.style.display='block';}
+  submitBtn.disabled=false; submitBtn.textContent='Üzenet küldése';
 });
 
-renderGrid();
+init();
 </script>
 </body>
 </html>

@@ -1,0 +1,7 @@
+nev: Erdőtalaj Virágcserép
+kategoria: viragcserep
+tag: Virágcserép · közepes
+leiras: Földes texturált felület, moha zöld mázzal. Vízelvezetővel és illő alátéttel együtt.
+ar: 8 900 Ft
+megjegyzes: alátéttel együtt
+jelveny: uj
